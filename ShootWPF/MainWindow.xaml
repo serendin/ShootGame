@@ -1,0 +1,56 @@
+﻿<Window x:Class="ShootWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="万圣节之夜" Loaded="Window_Loaded" Height="700" Width="815" WindowStartupLocation="CenterScreen">
+    <Grid Name="grid1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <StackPanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Resources/bottom.png"/>
+            </StackPanel.Background>
+            <StackPanel>
+                <Border BorderThickness="2" BorderBrush="Black" Height="100" Background="White" Margin="0,25,0,0">
+                    <Image Name="imghag" Source="Resources/hag.png" Width="75" Height="100" PreviewMouseLeftButtonDown="hag_PreviewMouseLeftButtonDown" />
+                </Border>
+                <Border BorderThickness="2" BorderBrush="Black" Background="White" >
+                    <Label Name="label1" Content="50" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Height="30" BorderBrush="Black" Background="White" />
+                </Border>
+            </StackPanel>
+            <StackPanel>
+                <Border BorderThickness="2" BorderBrush="Black" Height="100" Background="White" Margin="0,25,0,0">
+                     <Image Name="imgwarrior" Source="Resources/warrior.png" Height="100" PreviewMouseLeftButtonDown="warrior_PreviewMouseLeftButtonDown" />
+                </Border>
+                <Border BorderThickness="2" BorderBrush="Black" Background="White" >
+                    <Label Content="40" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="Black" FontWeight="Bold"  Height="30" BorderBrush="Black" Background="White" />
+                </Border>
+            </StackPanel>
+            <StackPanel Margin="448,0,0,0">
+                <StackPanel Margin="0,75,0,0" Orientation="Horizontal">
+                     <Label Content="Time:" FontSize="25" Foreground="White" FontWeight="Bold"  Height="40" BorderBrush="{x:Null}" Background="{x:Null}" />
+                     <Label Name="time" FontSize="25" Foreground="White" FontWeight="Bold"  Height="40" Width="60" BorderBrush="{x:Null}" Background="{x:Null}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                    <Label Content="Gold:" FontSize="25" Foreground="White" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="40" BorderBrush="{x:Null}" Background="{x:Null}" />
+                    <Label Name="GoldNum" FontSize="25" Foreground="White" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="40" Width="60" BorderBrush="{x:Null}" Background="{x:Null}" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="11,0,0,0">
+                <Button Content="退出" VerticalAlignment="Top" Width="54" Height="32" Click="ExitButton_Click" FontSize="18" Background="White" Foreground="Black" BorderBrush="Black"/>
+                <Button Content="暂停" VerticalAlignment="Top" Width="54" Height="32" Click="PauseButton_Click" FontSize="18" Background="White" Foreground="Black" BorderBrush="Black"/>
+                <Button Content="继续" VerticalAlignment="Top" Width="54" Height="32" Click="ContinueButton_Click" FontSize="18" Background="White" Foreground="Black" BorderBrush="Black"/>
+                <Button Content="重置" VerticalAlignment="Top" Width="54" Height="32" Click="RestartButton_Click" FontSize="18" Background="White" Foreground="Black" BorderBrush="Black"/>
+                <Button Content="返回" VerticalAlignment="Top" Width="54" Height="32" Click="ReturnButton_Click" FontSize="18" Background="White" Foreground="Black" BorderBrush="Black"/>
+            </StackPanel>
+        </StackPanel>
+        <Border Grid.Row="1" BorderThickness="2" BorderBrush="Black">
+            <Canvas Name="canvas1" PreviewMouseLeftButtonDown="canvas1_PreviewMouseLeftButtonDown">
+                <Canvas.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="Resources/street.png"/>
+                </Canvas.Background>
+            </Canvas>
+        </Border>
+    </Grid>
+</Window>
